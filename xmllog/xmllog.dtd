@@ -1,0 +1,8 @@
+<!ELEMENT kb            (hn*) >
+<!ELEMENT hn            (relationship, relationship*) >
+<!ELEMENT relationship  (relator,     (ind | var | struc)*) >
+<!ELEMENT struc         (constructor, (ind | var | struc)*) >
+<!ELEMENT relator       (#PCDATA) >
+<!ELEMENT constructor   (#PCDATA) >
+<!ELEMENT ind           (#PCDATA) >
+<!ELEMENT var           (#PCDATA) >

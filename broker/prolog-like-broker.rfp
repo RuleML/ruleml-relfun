@@ -1,0 +1,21 @@
+peters-buy() :- buy(peters,What) & What.
+
+buy(Broker,Prod) :- want(customer(Broker),Prod),
+                    deal(Prod,cost(Prod),benefit(Prod)).
+
+deal(Prod,Cost,Benefit) :- >=(Benefit,Cost).
+
+want(miller,stock1).
+want(miller,stock2).
+want(fuller,stock3).
+
+customer(peters) :& miller.
+customer(peters) :& fuller.
+
+cost(stock1) :& 165.
+cost(stock2) :& 130.
+cost(stock3) :& 175.
+
+benefit(stock1) :& 160.
+benefit(stock2) :& 130.
+benefit(stock3) :& 180.

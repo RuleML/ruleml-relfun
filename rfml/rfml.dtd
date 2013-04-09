@@ -1,0 +1,60 @@
+<!-- The XML DTD for RFML                                                   -->
+<!-- Author: Harold Boley                     Last Modification: 2000-04-29 -->
+
+
+<!-- ENTITIES use non-terminals of Relfun grammar (Boley 1999) 'untagged',  -->
+<!-- e.g. term ::= con | var | anon | struc | tup, just specifying, say,    -->
+<!-- <var> X </var> term instead of nesting <term> <var> X </var> </term>   -->
+
+<!ENTITY % variable      "(var | anon)" >
+<!ENTITY % appellative   "(con | %variable; | struc)" >
+<!ENTITY % term          "(%appellative; | tup)" >
+
+
+<!-- ELEMENTS use non-terminals of Relfun grammar 'tagged', so var ::= ...  -->
+<!-- itself becomes <var> X </var>                                          -->
+
+
+<!-- rfml is the document root, the possibly empty knowledge-base top-level -->
+<!-- of hn or ft clauses:                                                   -->
+
+<!ELEMENT rfml          (hn | ft)* >
+
+<!-- hn clauses are a pattop before zero (facts) or more terms or callop's; -->
+<!-- ft clauses are a pattop before at least one term or callop (the foot): -->
+
+<!ELEMENT hn            (pattop, (%term; | callop)*) >
+<!ELEMENT ft            (pattop, (%term; | callop)+) >
+
+<!-- a pattop clause head is an operator appellative and a (rest) pattern:  -->
+ 
+<!ELEMENT pattop        (%appellative;,
+                         (%term;)*,
+                         (rest, (%variable; | tup))?) >
+
+<!-- a callop clause body premise or foot is a (nested) operator call:      -->
+
+<!ELEMENT callop        ((%appellative; | callop),
+                         (%term; | callop)*,
+                         (rest, (%variable; | tup | callop))?) >
+
+<!-- a struc is a constructor appellative with argument terms (and a rest): -->
+
+<!ELEMENT struc         (%appellative;,
+                         (%term;)*,
+                         (rest, (%variable; | tup))?) >
+
+<!-- a tup is a list of terms (zero or more), perhaps followed by a rest:   -->
+
+<!ELEMENT tup           ((%term;)*,
+                         (rest, (%variable; | tup))?) >
+
+<!-- con and var are just parsed character data (character permutations):   -->
+
+<!ELEMENT con           (#PCDATA)>
+<!ELEMENT var           (#PCDATA)>
+
+<!-- anon (Relfun: "_") and rest (Relfun: "|") are always-empty elements:   -->
+
+<!ELEMENT anon          EMPTY >
+<!ELEMENT rest          EMPTY >

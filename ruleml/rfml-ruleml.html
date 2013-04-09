@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><title>RuleML to/fro RFML</title><style type="text/css">
+       h1 { font-size: 32pt; font-weight: bold }
+       h2 { font-size: 16pt; font-weight: bold }
+       ul { line-height: 120% }
+       ol { line-height: 120% }
+       p { line-height: 100% }
+     </style></head><body background="hintergrund.gif" bgcolor="#FFFFFF">
+    <center>
+      <big>
+        <table bgcolor="#CCCCFF" border="1" cellpadding="5"><tr><td><b><pre>
+
+--&gt;</pre></b></td></tr></table>
+        <table bgcolor="#FFCCCC" border="1" cellpadding="5"><tr><td>R u l e M L</td></tr></table>
+        <table bgcolor="#CCCCFF" border="1" cellpadding="5"><tr><td><b><pre>
+
+&lt;--</pre></b></td></tr></table>
+      </big>
+      <br> <br>
+
+<h1>Translators between RuleML and RFML</h1>
+<h2><a href="http://www.dfki.uni-kl.de/~boley/">Harold Boley</a></h2>
+<h2>2001-09-17: Version 0.2</h2>
+    </center>
+
+<br> <br> <br>
+
+<p>
+Experimental XSLT translators between the Horn-logic subsets of
+<a href="http://www.dfki.uni-kl.de/ruleml/">RuleML</a> and
+<a href="http://www.relfun.org/rfml/">RFML</a> are provided through this page.
+</p>
+  <h2>Sections</h2><ul><li><a href="#Overview">Overview</a><li><a href="#Explanations">Explanations</a></ul><h2><a name="Overview">Overview</a></h2>
+
+<p>
+This is a first pair of (XSLT-specified) translators
+exporting/importing RuleML markup to/fro another XML-based rule language,
+namely the functional-logic programming language RFML (where only the logic part is
+used here):
+<ul>
+  <li><a href="http://www.relfun.org/ruleml/ruleml2rfml.xsl">ruleml2rfml.xsl</a>
+maps a Hornlog RuleML rulebase to a corresponding RFML program:
+its RuleML input analysis can be transferred to other RuleML --&gt; <i>XML-rule-language</i> translators.
+  
+  <li><a href="http://www.relfun.org/ruleml/rfml2ruleml.xsl">rfml2ruleml.xsl</a>
+maps a Hornlog RFML program to a corresponding RuleML rulebase:
+its RuleML output generation can be transferred to other <i>XML-rule-language</i> --&gt; RuleML translators.
+  
+</ul>
+</p>
+<h2><a name="Explanations">Explanations</a></h2>
+
+<p>
+The two XML-to-XML stylesheets are quite different, since RFML -- like normal Prolog -- is positional
+while RuleML is role-based. XML comments in the stylesheets explain the important XSLT-template rules.
+The XSLT-stylesheet engines used for the translations were both
+<a href="http://xml.apache.org/xalan-j/">Xalan</a>
+and
+<a href="http://xml.apache.org/cocoon/index.html">Cocoon</a>.
+</p>
+<p>
+As an example let us consider a roundtrip starting and ending at the
+<a href="http://www.dfki.uni-kl.de/ruleml/exa/0.8/discount.ruleml">sample RuleML business rulebase for discounting</a> (View | Page Source):
+Its XSLT-annotated RuleML version,
+<a href="http://www.relfun.org/ruleml/discount.ruleml">discount.ruleml</a>,
+via
+<a href="http://www.relfun.org/ruleml/ruleml2rfml.xsl">ruleml2rfml.xsl</a>,
+becomes
+RFML's <a href="http://www.relfun.org/ruleml/discount.rfml">discount.rfml</a>
+(already annotated for the alternative continuation below).
+This, in the XSLT-annotated RFML version
+<a href="http://www.relfun.org/ruleml/discount-roundtrip.rfml">discount-roundtrip.rfml</a>,
+via
+<a href="http://www.relfun.org/ruleml/rfml2ruleml.xsl">rfml2ruleml.xsl</a>,
+becomes
+RuleML's <a href="http://www.relfun.org/ruleml/discount-roundtrip.ruleml">discount-roundtrip.ruleml</a>.
+Except for XSLT annotations, comments, and whitespace, this is the same as the original RuleML version.
+</p>
+<p>
+As an alternative continuation of the example, the intermediate RFML version
+<a href="http://www.relfun.org/ruleml/discount.rfml">discount.rfml</a>
+(XSLT-annotated for viewing),
+via the XML-to-HTML stylesheet
+<a href="http://www.relfun.org/rfml/rfmlsp.xsl">rfmlsp.xsl</a>,
+leads to the font-and-color-coded HTML Prolog version
+<a href="http://www.relfun.org/ruleml/discount.html">discount.html</a>.
+Using something like &quot;File | Save As... | Text&quot;, an ASCII Prolog version can be obtained,
+which permits whitespace-separated phrases as constant symbols.
+</p>
+<p>
+The inverse transformation of (ordinary) ASCII Prolog to RFML markup, hence to RuleML,
+requires a separate parser such as the (Lisp-implemented) parser of
+<a href="http://www.dfki.uni-kl.de/~vega/relfun.html">Relfun</a>: there are no ASCII-to-XML stylesheets.
+</p>
+<br>
+<p>
+Site Contact:
+<a href="http://www.dfki.uni-kl.de/~boley/">Harold Boley</a>.
+
+<br><br><br>
+
+      <a name="Practice-Preach"></a><small>&quot;Practice what you preach&quot;: XML source of this homepage at <a href="http://www.dfki.uni-kl.de/~boley/xslt/rfml-ruleml.xml">rfml-ruleml.xml</a>;
+      <br>
+      transformed to HTML via the adaptation of <a href="http://www.dfki.uni-kl.de/~sintek/">Michael Sintek</a>'s SliML <a href="http://www.w3.org/TR/xslt">XSLT</a> stylesheet at <a href="http://www.dfki.uni-kl.de/~boley/xslt/homepage.xsl">homepage.xsl</a> (View | Page Source)
+      </small>
+</p>
+
+<xhtml><a href="http://xml.apache.org/cocoon/index.html" target="_self"><img align="right" alt="Powered by Cocoon" border="0" hspace="4" src="cocoon-small.jpg" vspace="2"></a></xhtml>
+  </body></html>
+<!-- This page was served in 1317 milliseconds by Cocoon 1.8 -->

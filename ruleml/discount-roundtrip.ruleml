@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rulebase>  <imp>
+    <_head>
+      <atom>
+        <_opr>
+          <rel>discount</rel>
+        </_opr>
+        <var>customer</var>
+        <var>product</var>
+        <ind>5.0 percent</ind>
+      </atom>
+    </_head>
+    <_body>
+      <and>
+        <atom>
+          <_opr>
+            <rel>premium</rel>
+          </_opr>
+          <var>customer</var>
+        </atom>
+        <atom>
+          <_opr>
+            <rel>regular</rel>
+          </_opr>
+          <var>product</var>
+        </atom>
+      </and>
+    </_body>
+  </imp>  <imp>
+    <_head>
+      <atom>
+        <_opr>
+          <rel>discount</rel>
+        </_opr>
+        <var>customer</var>
+        <var>product</var>
+        <ind>7.5 percent</ind>
+      </atom>
+    </_head>
+    <_body>
+      <and>
+        <atom>
+          <_opr>
+            <rel>premium</rel>
+          </_opr>
+          <var>customer</var>
+        </atom>
+        <atom>
+          <_opr>
+            <rel>luxury</rel>
+          </_opr>
+          <var>product</var>
+        </atom>
+      </and>
+    </_body>
+  </imp>  <imp>
+    <_head>
+      <atom>
+        <_opr>
+          <rel>premium</rel>
+        </_opr>
+        <var>customer</var>
+      </atom>
+    </_head>
+    <_body>
+      <atom>
+        <_opr>
+          <rel>spending</rel>
+        </_opr>
+        <var>customer</var>
+        <ind>min 5000 euro</ind>
+        <ind>previous year</ind>
+      </atom>
+    </_body>
+  </imp>  <fact>
+    <_head>
+      <atom>
+        <_opr>
+          <rel>luxury</rel>
+        </_opr>
+        <ind>Porsche</ind>
+      </atom>
+    </_head>
+  </fact>  <fact>
+    <_head>
+      <atom>
+        <_opr>
+          <rel>regular</rel>
+        </_opr>
+        <ind>Honda</ind>
+      </atom>
+    </_head>
+  </fact>  <fact>
+    <_head>
+      <atom>
+        <_opr>
+          <rel>spending</rel>
+        </_opr>
+        <ind>Peter Miller</ind>
+        <ind>min 5000 euro</ind>
+        <ind>previous year</ind>
+      </atom>
+    </_head>
+  </fact>  </rulebase>
+
+<!-- This page was served in 1248 milliseconds by Cocoon 1.8 -->
