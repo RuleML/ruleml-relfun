@@ -1,0 +1,150 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE rfml SYSTEM "http://www.relfun.org/rfml/rfml.dtd">
+<?xml-stylesheet href="http://www.relfun.org/rfml/rfmlsp.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+<rfml>
+
+<ft>
+  <pattop>
+    <con>peters-buy</con>
+  </pattop>
+  <callop>
+    <con>buy</con>
+    <con>peters</con>
+    <var>what</var>
+  </callop>
+  <var>what</var>
+</ft>
+
+<hn>
+  <pattop>
+    <con>buy</con>
+    <var>broker</var>
+    <var>prod</var>
+  </pattop>
+  <callop>
+    <con>want</con>
+    <callop>
+      <con>customer</con>
+      <var>broker</var>
+    </callop>
+    <var>prod</var>
+  </callop>
+  <callop>
+    <con>deal</con>
+    <var>prod</var>
+    <callop>
+      <con>cost</con>
+      <var>prod</var>
+    </callop>
+    <callop>
+      <con>benefit</con>
+      <var>prod</var>
+    </callop>
+  </callop>
+</hn>
+
+<hn>
+  <pattop>
+    <con>deal</con>
+    <var>prod</var>
+    <var>cost</var>
+    <var>benefit</var>
+  </pattop>
+  <callop>
+    <con>>=</con>
+    <var>benefit</var>
+    <var>cost</var>
+  </callop>
+</hn>
+
+<hn>
+  <pattop>
+    <con>want</con>
+    <con>miller</con>
+    <con>stock1</con>
+  </pattop>
+</hn>
+
+<hn>
+  <pattop>
+    <con>want</con>
+    <con>miller</con>
+    <con>stock2</con>
+  </pattop>
+</hn>
+
+<hn>
+  <pattop>
+    <con>want</con>
+    <con>fuller</con>
+    <con>stock3</con>
+  </pattop>
+</hn>
+
+<ft>
+  <pattop>
+    <con>customer</con>
+    <con>peters</con>
+  </pattop>
+  <con>miller</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>customer</con>
+    <con>peters</con>
+  </pattop>
+  <con>fuller</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>cost</con>
+    <con>stock1</con>
+  </pattop>
+  <con>165</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>cost</con>
+    <con>stock2</con>
+  </pattop>
+  <con>130</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>cost</con>
+    <con>stock3</con>
+  </pattop>
+  <con>175</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>benefit</con>
+    <con>stock1</con>
+  </pattop>
+  <con>160</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>benefit</con>
+    <con>stock2</con>
+  </pattop>
+  <con>130</con>
+</ft>
+
+<ft>
+  <pattop>
+    <con>benefit</con>
+    <con>stock3</con>
+  </pattop>
+  <con>180</con>
+</ft>
+
+</rfml>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><title>Relfun KB for peters-buy etc.</title><style type="text/css">
+       strong { color: blue }
+     </style></head><body bgcolor="#EEEEEE">
+
+<strong><b>peters-buy</b></strong>()<tt> :- </tt><strong><b>buy</b></strong>(<b>peters</b><tt>,</tt><i>_what</i>)<tt> &amp; </tt><i>_what</i><tt>.</tt><br>
+
+<strong><b>buy</b></strong>(<i>_broker</i><tt>,</tt><i>_prod</i>)<tt> :- </tt><strong><b>want</b></strong>(<strong><b>customer</b></strong>(<i>_broker</i>)<tt>,</tt><i>_prod</i>)<tt>, </tt><strong><b>deal</b></strong>(<i>_prod</i><tt>,</tt><strong><b>cost</b></strong>(<i>_prod</i>)<tt>,</tt><strong><b>benefit</b></strong>(<i>_prod</i>))<tt>.</tt><br>
+
+<strong><b>deal</b></strong>(<i>_prod</i><tt>,</tt><i>_cost</i><tt>,</tt><i>_benefit</i>)<tt> :- </tt><strong><b>&gt;=</b></strong>(<i>_benefit</i><tt>,</tt><i>_cost</i>)<tt>.</tt><br>
+
+<strong><b>want</b></strong>(<b>miller</b><tt>,</tt><b>stock1</b>)<tt>.</tt><br>
+
+<strong><b>want</b></strong>(<b>miller</b><tt>,</tt><b>stock2</b>)<tt>.</tt><br>
+
+<strong><b>want</b></strong>(<b>fuller</b><tt>,</tt><b>stock3</b>)<tt>.</tt><br>
+
+<strong><b>customer</b></strong>(<b>peters</b>)<tt> :&amp; </tt><b>miller</b><tt>.</tt><br>
+
+<strong><b>customer</b></strong>(<b>peters</b>)<tt> :&amp; </tt><b>fuller</b><tt>.</tt><br>
+
+<strong><b>cost</b></strong>(<b>stock1</b>)<tt> :&amp; </tt><b>165</b><tt>.</tt><br>
+
+<strong><b>cost</b></strong>(<b>stock2</b>)<tt> :&amp; </tt><b>130</b><tt>.</tt><br>
+
+<strong><b>cost</b></strong>(<b>stock3</b>)<tt> :&amp; </tt><b>175</b><tt>.</tt><br>
+
+<strong><b>benefit</b></strong>(<b>stock1</b>)<tt> :&amp; </tt><b>160</b><tt>.</tt><br>
+
+<strong><b>benefit</b></strong>(<b>stock2</b>)<tt> :&amp; </tt><b>130</b><tt>.</tt><br>
+
+<strong><b>benefit</b></strong>(<b>stock3</b>)<tt> :&amp; </tt><b>180</b><tt>.</tt><br>
+
+</body></html>
+<!-- This page was served in 3138 milliseconds by Cocoon 1.8 -->

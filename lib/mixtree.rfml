@@ -1,0 +1,100 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE rfml SYSTEM "http://www.relfun.org/rfml/tiny-is-rfml.dtd">
+
+<rfml>
+
+<ft>
+  <pattop>
+    <struc>
+      <con>mixtree</con>
+      <var>terfun</var>
+      <var>mixvoid</var>
+    </struc>
+    <var>tree</var>
+  </pattop>
+  <callop>
+    <struc>
+      <con>walktree</con>
+      <var>terfun</var>
+      <var>mixvoid</var>
+    </struc>
+    <var>tree</var>
+    <var>mix</var>
+    <var>mix</var>
+  </callop>
+</ft>
+
+<ft>
+  <pattop>
+    <struc>
+      <con>walktree</con>
+      <var>terfun</var>
+      <var>mixvoid</var>
+    </struc>
+    <con>void</con>
+    <var>mix</var>
+    <var>mixvoid</var>
+  </pattop>
+  <con>void</con>
+</ft>
+
+<ft>
+  <pattop>
+    <struc>
+      <con>walktree</con>
+      <var>terfun</var>
+      <var>mixvoid</var>
+    </struc>
+    <struc>
+      <con>tree</con>
+      <var>label</var>
+      <var>left</var>
+      <var>right</var>
+    </struc>
+    <var>mix</var>
+    <var>mixsofar</var>
+  </pattop>
+  <is>
+    <var>newleft</var>
+    <callop>
+      <struc>
+        <con>walktree</con>
+        <var>terfun</var>
+        <var>mixvoid</var>
+      </struc>
+      <var>left</var>
+      <var>mix</var>
+      <var>mixleft</var>
+    </callop>
+  </is>
+  <is>
+    <var>newright</var>
+    <callop>
+      <struc>
+        <con>walktree</con>
+        <var>terfun</var>
+        <var>mixvoid</var>
+      </struc>
+      <var>right</var>
+      <var>mix</var>
+      <var>mixright</var>
+    </callop>
+  </is>
+  <is>
+    <var>mixsofar</var>
+    <callop>
+      <var>terfun</var>
+      <var>label</var>
+      <var>mixleft</var>
+      <var>mixright</var>
+    </callop>
+  </is>
+  <struc>
+    <con>tree</con>
+    <var>mix</var>
+    <var>newleft</var>
+    <var>newright</var>
+  </struc>
+</ft>
+
+</rfml>

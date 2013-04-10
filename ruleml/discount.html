@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><title>Relfun KB for discount etc.</title><style type="text/css">
+       strong { color: blue }
+     </style></head><body bgcolor="#EEEEEE">
+
+<strong><b>discount</b></strong>(<i>_customer</i><tt>,</tt><i>_product</i><tt>,</tt><b>5.0 percent</b>)<tt> :- </tt><strong><b>premium</b></strong>(<i>_customer</i>)<tt>, </tt><strong><b>regular</b></strong>(<i>_product</i>)<tt>.</tt><br>
+
+<strong><b>discount</b></strong>(<i>_customer</i><tt>,</tt><i>_product</i><tt>,</tt><b>7.5 percent</b>)<tt> :- </tt><strong><b>premium</b></strong>(<i>_customer</i>)<tt>, </tt><strong><b>luxury</b></strong>(<i>_product</i>)<tt>.</tt><br>
+
+<strong><b>premium</b></strong>(<i>_customer</i>)<tt> :- </tt><strong><b>spending</b></strong>(<i>_customer</i><tt>,</tt><b>min 5000 euro</b><tt>,</tt><b>previous year</b>)<tt>.</tt><br>
+
+<strong><b>luxury</b></strong>(<b>Porsche</b>)<tt>.</tt><br>
+
+<strong><b>regular</b></strong>(<b>Honda</b>)<tt>.</tt><br>
+
+<strong><b>spending</b></strong>(<b>Peter Miller</b><tt>,</tt><b>min 5000 euro</b><tt>,</tt><b>previous year</b>)<tt>.</tt><br>
+
+</body></html>
+<!-- This page was served in 1319 milliseconds by Cocoon 1.8 -->
