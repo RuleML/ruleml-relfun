@@ -1,0 +1,8 @@
+FILE QUARANTINED
+----------------
+
+NRC-CNRC Antigen for Exchange removed www-relfun.tar.gz->Unknown->http/_vti_bin/_vti_aut/author.exe since it
+was found to be infected with FILE FILTER= *.exe virus.
+
+
+To retreive this file, please contact your Systems Administrator or send a e-mail to Mail-Admin@nrc-cnrc.gc.ca.

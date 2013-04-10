@@ -1,0 +1,9 @@
+mixtree[Terfun,Mixvoid](Tree) :& walktree[Terfun,Mixvoid](Tree,Mix,Mix).
+ 
+walktree[Terfun,Mixvoid](void,Mix,Mixvoid) :& void.
+walktree[Terfun,Mixvoid](tree[Label,Left,Right],Mix,Mixsofar) :-
+  Newleft  .= walktree[Terfun,Mixvoid](Left,Mix,Mixleft),
+  Newright .= walktree[Terfun,Mixvoid](Right,Mix,Mixright),
+  Mixsofar .= Terfun(Label,Mixleft,Mixright)
+  &
+  tree[Mix,Newleft,Newright].

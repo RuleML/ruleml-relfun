@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="rfml2ruleml.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+
+<rfml>
+
+<hn>
+  <pattop><con>discount</con><var>customer</var><var>product</var><con>5.0 percent</con></pattop>
+  <callop><con>premium</con><var>customer</var></callop>
+  <callop><con>regular</con><var>product</var></callop>
+</hn>
+
+<hn>
+  <pattop><con>discount</con><var>customer</var><var>product</var><con>7.5 percent</con></pattop>
+  <callop><con>premium</con><var>customer</var></callop>
+  <callop><con>luxury</con><var>product</var></callop>
+</hn>
+
+<hn>
+  <pattop><con>premium</con><var>customer</var></pattop>
+  <callop><con>spending</con><var>customer</var><con>min 5000 euro</con><con>previous year</con></callop>
+</hn>
+
+<hn>
+  <pattop><con>luxury</con><con>Porsche</con></pattop>
+</hn>
+
+<hn>
+  <pattop><con>regular</con><con>Honda</con></pattop>
+</hn>
+
+<hn>
+  <pattop><con>spending</con><con>Peter Miller</con><con>min 5000 euro</con><con>previous year</con></pattop>
+</hn>
+
+</rfml>

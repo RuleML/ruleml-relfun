@@ -1,0 +1,31 @@
+(ft (peters-buy) (buy peters _what) _what)
+
+(hn (buy _broker _prod)
+    (want (customer _broker) _prod)
+    (deal _prod (cost _prod) (benefit _prod)) )
+
+(hn (deal _prod _cost _benefit)
+    (>= _benefit _cost) )
+
+(hn (want miller stock1))
+(hn (want miller stock2))
+(hn (want fuller stock3))
+
+(ft (customer peters)
+    miller )
+(ft (customer peters)
+    fuller )
+
+(ft (cost stock1)
+    165 )
+(ft (cost stock2)
+    130 )
+(ft (cost stock3)
+    175 )
+
+(ft (benefit stock1)
+    160 )
+(ft (benefit stock2)
+    130 )
+(ft (benefit stock3)
+    180 )

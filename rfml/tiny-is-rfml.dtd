@@ -1,0 +1,9 @@
+<!ELEMENT rfml          (hn | ft)* >
+<!ELEMENT hn            (pattop, (con | var | struc | is | callop)*) >
+<!ELEMENT ft            (pattop, (con | var | struc | is | callop)+) >
+<!ELEMENT callop        ((con | var | struc | callop)+) >
+<!ELEMENT pattop        ((con | var | struc)+) >
+<!ELEMENT struc         ((con | var | struc)+) >
+<!ELEMENT is            ((con | var | struc), (con | var | struc | callop)) >
+<!ELEMENT con           (#PCDATA)>
+<!ELEMENT var           (#PCDATA)>
